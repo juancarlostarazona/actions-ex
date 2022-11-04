@@ -39,14 +39,15 @@ jobs:
         run: |
           source env/bin/activate
           pytest
+          
   CI:
     runs-on: ubuntu-latest
     steps:
-        - users: actions/checkout@v3
-        - name: create credentials
-          run: |
-            cd ~
-            mkdir .aws
-            cd .aws
-            echo "${{secrets.AWS_CREDENTIALS}}" > credentials
-            ls
+      - uses: actions/checkout@v3
+      - name: create credentials
+        run: |
+          cd ~
+          mkdir .aws
+          cd .aws
+          echo "${{secrets.AWS_CREDENTIALS}}" > credentials
+          ls
