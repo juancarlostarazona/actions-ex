@@ -51,8 +51,9 @@ jobs:
           mkdir .aws
           cd .aws
           echo "${{secrets.AWS_CREDENTIALS}}" > credentials
+          ls
           aws s3 ls
-      - name: create deploy
-        run: 
+      - name: deploy
+        run: |
           aws s3 mb s3://bigdata0411
           aws s3 cp actions-ex s3://bigdata0411/ --recursive
