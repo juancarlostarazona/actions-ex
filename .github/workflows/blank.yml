@@ -55,5 +55,6 @@ jobs:
           aws s3 ls
       - name: deploy
         run: |
+          cd /home/runner/work/actions-ex
           aws s3 mb s3://bigdata0411
           aws s3 cp actions-ex s3://bigdata0411/ --recursive
