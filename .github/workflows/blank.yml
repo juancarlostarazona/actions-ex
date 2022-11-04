@@ -54,5 +54,4 @@ jobs:
           aws s3 ls
       - name: create deploy
         run: 
-         cd /home/runner/work/actions-ex/actions-ex
          aws s3 cp main.py s3://bigdata0411/
